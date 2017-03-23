@@ -1,8 +1,0 @@
-setup.py
-loadBrukerData/__init__.py
-loadBrukerData/loadBrukerData.py
-loadBrukerData.egg-info/PKG-INFO
-loadBrukerData.egg-info/SOURCES.txt
-loadBrukerData.egg-info/dependency_links.txt
-loadBrukerData.egg-info/requires.txt
-loadBrukerData.egg-info/top_level.txt
