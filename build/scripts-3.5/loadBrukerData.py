@@ -1,6 +1,5 @@
 import os
 import numpy as np
-import struct
 
 def loadBrukerData(file):
     #Split file from path and add .dsc ext for paramsfile
@@ -20,10 +19,9 @@ def loadBrukerData(file):
     
     for i in range(0, len(ydataBin), 16):
         ydataReal.append(struct.unpack('>d', ydataBin[i:i+8]))
-        # np.append(ydataReal, struct.unpack('>d', ydataBin[i:i+8]))
     for i in range(8, len(ydataBin), 16):
         ydataImg.append(struct.unpack('>d', ydataBin[i:i+8]))
-        # np.append(ydataImg, struct.unpack('>d', ydataBin[i:i+8])c)
+        
     #Load params file to extract x data
     
     params = open(paramsFile, 'r')
@@ -43,5 +41,5 @@ def loadBrukerData(file):
     # Use parameters to generate an xdata set
     xdata = np.linspace(xstart, xstart+xrange, xpoints)
     
-    return xdata, np.array(ydataReal)[:,0], np.array(ydataImg)[:,0]
+    return xdata, ydataReal, ydataImg
             
