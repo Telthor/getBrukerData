@@ -39,9 +39,13 @@ def loadBrukerData(file):
             xstart = float(line[5:len(line)])
         if param == "XWID":
             xrange = float(line[5:len(line)])
+        if param == "XNAM":
+            sweepType = line[5:len(line)]
+        if param == "XUNI":
+            sweepUnit = line[5:len(line)]
     
     # Use parameters to generate an xdata set
     xdata = np.linspace(xstart, xstart+xrange, xpoints)
     
-    return xdata, np.array(ydataReal)[:,0], np.array(ydataImg)[:,0]
+    return xdata, np.array(ydataReal)[:,0], np.array(ydataImg)[:,0], sweepType, sweepUnit
             
